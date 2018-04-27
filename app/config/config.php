@@ -1,7 +1,12 @@
 <?php
+// DB params
+define('DB_HOST', '');
+define('DB_USER', '');
+define('DB_PASS', '');
+define('DB_NAME', '');
 // App root
 define('APPROOT', dirname(dirname(__FILE__)));
 // URL root
-define('URLROOT', 'http://eljefemvc');
+define('URLROOT', '');
 // Site name
-define('SITENAME', 'EljefeMVC');
+define('SITENAME', '');
