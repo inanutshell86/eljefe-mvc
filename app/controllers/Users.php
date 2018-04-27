@@ -29,4 +29,24 @@ class Users extends Controller
             $this->view('users/register', $data);
         }
     }
+
+    public function login()
+    {
+        // Check for POST request
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            // Process form
+
+        } else {
+            // Init data
+            $data = [
+                'email' => '',
+                'password' => '',
+                'email_error' => '',
+                'password_error' => ''
+            ];
+
+            // Load view
+            $this->view('users/login', $data);
+        }
+    }
 }
