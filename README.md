@@ -1,1 +1,1 @@
-# EljefeMVC PHP Framework
+# ShareNotes App
