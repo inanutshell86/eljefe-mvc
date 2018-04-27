@@ -9,7 +9,8 @@ class Pages extends Controller
     public function index()
     {
         $data = [
-            'title' => 'ShareNotes'
+            'title' => 'ShareNotes',
+            'desc' => 'Simple social network built on the EljefeMVC PHP framework'
         ];
 
         $this->view('pages/index', $data);
@@ -18,7 +19,8 @@ class Pages extends Controller
     public function about()
     {
         $data = [
-            'title' => 'About'
+            'title' => 'About',
+            'desc' => 'App to share notes with other users'
         ];
         $this->view('pages/about', $data);
     }

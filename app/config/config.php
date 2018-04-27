@@ -7,6 +7,8 @@ define('DB_NAME', 'mvc');
 // App root
 define('APPROOT', dirname(dirname(__FILE__)));
 // URL root
-define('URLROOT', 'http://sharenotes/');
+define('URLROOT', 'http://sharenotes');
 // Site name
 define('SITENAME', 'ShareNotes');
+// App version
+define('APPVERSION', '1.0.0');
