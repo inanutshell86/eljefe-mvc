@@ -8,6 +8,9 @@ class Pages extends Controller
 
     public function index()
     {
+        if (isLoggedIn()) {
+            redirect('notes');
+        }
         $data = [
             'title' => 'ShareNotes',
             'desc' => 'Simple social network built on the EljefeMVC PHP framework'
