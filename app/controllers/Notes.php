@@ -8,6 +8,7 @@ class Notes extends Controller
         }
 
         $this->noteModel = $this->model('Note');
+        $this->userModel = $this->model('User');
     }
 
     public function index()
@@ -63,5 +64,16 @@ class Notes extends Controller
         }
 
         $this->view('notes/add', $data);
+    }
+
+    public function show($id)
+    {
+        $note = $this->noteModel->getById($id);
+        $user = $this->userModel->getById($note->user_id);
+        $data = [
+            'note' => $note,
+            'user' => $user
+        ];
+        $this->view('notes/show', $data);
     }
 }
