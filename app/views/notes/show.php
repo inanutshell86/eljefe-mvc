@@ -8,7 +8,7 @@
 <p><?= $data['note']->content; ?></p>
 <?php if ($data['note']->user_id == $_SESSION['user_id']) : ?>
     <hr>
-    <a href="<?= URLROOT; ?>/notes/edit<?= $data['note']->id; ?>" class="btn btn-dark">Edit</a>
+    <a href="<?= URLROOT; ?>/notes/edit/<?= $data['note']->id; ?>" class="btn btn-dark">Edit</a>
 
     <form class="pull-right" action="<?= URLROOT; ?>/notes/delete/<?= $data['note']->id; ?>" method="post">
         <input type="submit" value="Delete" class="btn btn-danger">

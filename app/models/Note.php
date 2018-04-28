@@ -40,6 +40,21 @@ class Note
         }
     }
 
+    public function updateNote($data)
+    {
+        $this->db->query('UPDATE notes SET title = :title, content = :content WHERE id = :id');
+
+        $this->db->bind(':id', $data['id']);
+        $this->db->bind(':title', $data['title']);
+        $this->db->bind(':content', $data['content']);
+
+        if ($this->db->execute()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     public function getById($id)
     {
         $this->db->query('SELECT * FROM notes WHERE id = :id');
