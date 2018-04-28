@@ -63,4 +63,17 @@ class Note
         $row = $this->db->single();
         return $row;
     }
+
+    public function deleteNote($id)
+    {
+        $this->db->query('DELETE FROM notes WHERE id = :id');
+
+        $this->db->bind(':id', $id);
+
+        if ($this->db->execute()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }

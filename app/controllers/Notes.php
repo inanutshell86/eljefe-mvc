@@ -130,4 +130,24 @@ class Notes extends Controller
         ];
         $this->view('notes/show', $data);
     }
+
+    public function delete($id)
+    {
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            // Get existing note from model
+            $note = $this->noteModel->getById($id);
+            // Check for owner
+            if ($note->user_id != $_SESSION['user_id']) {
+                redirect('notes');
+            }
+            if ($this->noteModel->deleteNote($id)) {
+                flash('name_msg', 'Note removed');
+                redirect('notes');
+            } else {
+                die('Something went wrong');
+            }
+        } else {
+            redirect('notes');
+        }
+    }
 }
