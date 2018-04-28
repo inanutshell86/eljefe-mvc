@@ -24,4 +24,19 @@ class Note
 
         return $results;
     }
+
+    public function addNote($data)
+    {
+        $this->db->query('INSERT INTO notes (title, user_id, content) VALUES (:title, :user_id, :content)');
+
+        $this->db->bind(':title', $data['title']);
+        $this->db->bind(':user_id', $data['user_id']);
+        $this->db->bind(':content', $data['content']);
+
+        if ($this->db->execute()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }

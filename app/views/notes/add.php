@@ -3,7 +3,7 @@
 <div class="card card-body bg-light mt-5">
     <h2>Add note</h2>
     <p>Create a note with this form</p>
-    <form action="<?= URLROOT; ?>/users/login" method="post">
+    <form action="<?= URLROOT; ?>/notes/add" method="post">
         <div class="form-group">
             <label for="title">Title <sup>*</sup></label>
             <input type="text" name="title" class="form-control form-control-lg <?= (!empty($data['title_error'])) ? 'is-invalid' : ''; ?>" value="<?= $data['title']; ?>">
